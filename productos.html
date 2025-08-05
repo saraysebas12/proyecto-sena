@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marroquinería - Compras Online</title>
+    <link rel="stylesheet" href="style/estilos_productos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <header id="encabezado">
+            <img src="./imagenes/Blue Illustrative Mascot Wolves Esports Team Logo.png" alt="Logo Marroquinería" id="logo">
+            <div id="titulo">WOLF SKIN</div>
+        </header>
+
+        <nav id="menu">
+            <ul id="button">
+                <li><a href="index.html">Sobre nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="contactenos.html">Contáctenos</a></li>
+                <li><a href="inicio_sesion.html">Inicio de sesión</a></li>
+            </ul>
+        </nav>
+
+        <h1>Compre nuestras prendas online con super descuentos</h1>
+
+        <table>
+            <tr>
+                <td>
+                    <h3>Producto Nro 1</h3>
+                    <h3>Chaqueta de cuero negra hombre</h3>
+                    <img src="./imagenes/p1.webp" alt="Chaqueta negra hombre"><br>
+                    <button onclick="agregarAlCarrito('Chaqueta de cuero negra hombre', 60000)">Agregar al carrito</button>
+                </td>
+                <td>
+                    <h3>Producto Nro 2</h3>
+                    <h3>Chaqueta de cuero de mujer</h3>
+                    <img src="./imagenes/p2.jpg" alt="Chaqueta mujer"><br>
+                    <button onclick="agregarAlCarrito('Chaqueta de cuero de mujer', 55000)">Agregar al carrito</button>
+                </td>
+                <td>
+                    <h3>Producto Nro 3</h3>
+                    <h3>Chaqueta de cuero de mujer</h3>
+                    <img src="./imagenes/p3.webp" alt="Chaqueta mujer"><br>
+                    <button onclick="agregarAlCarrito('Chaqueta de cuero de mujer 2', 100000)">Agregar al carrito</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Producto Nro 4</h3>
+                    <h3>Pantalón de cuero de mujer</h3>
+                    <img src="./imagenes/p4.jfif" alt="Pantalón mujer"><br>
+                    <button onclick="agregarAlCarrito(' Pantalón de cuero mujer', 70000)">Agregar al carrito</button>
+                </td>
+                <td>
+                    <h3>Producto Nro 5</h3>
+                    <h3>Cinturon de cuero para hombre</h3>
+                    <img src="./imagenes/cinturoncuero.jpg" alt="Cinturon hombre"><br>
+                    <button onclick="agregarAlCarrito(' Cinturon de cuero hombre', 100000)">Agregar al carrito</button>
+                </td>
+                <td>
+                    <h3>Producto Nro 6</h3>
+                    <h3>Zapatos de cuero hombre</h3>
+                    <img src="./imagenes/zapatoscue.avif" alt="Zapatos hombre"><br>
+                    <button onclick="agregarAlCarrito(' zapatos de cuero hombre', 70000)">Agregar al carrito</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Producto Nro 7</h3>
+                    <h3>Bolso de cuero de mujer</h3>
+                    <img src="./imagenes/bolsocue.png" alt="Bolso mujer"><br>
+                    <button onclick="agregarAlCarrito(' Bolso de cuero mujer', 70000)">Agregar al carrito</button>
+                </td>
+                <td>
+                    <h3>Producto Nro 8</h3>
+                    <h3>Billetera de cuero para hombre</h3>
+                    <img src="./imagenes/billetera.jpg" alt="Billetera hombre"><br>
+                    <button onclick="agregarAlCarrito(' Billetera de hombre en cuero', 100000)">Agregar al carrito</button>
+                </td>
+                <td>
+                    <h3>Producto Nro 9</h3>
+                    <h3>Botas de cuero mujer</h3>
+                    <img src="./imagenes/botascue}.jpg" alt="Botas mujer"><br>
+                    <button onclick="agregarAlCarrito(' Botas de cuero mujer', 70000)">Agregar al carrito</button>
+                </td>
+            </tr>
+        </table>
+   <form>
+            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+            <br>
+           
+        </form>
+
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p>Total en carrito: <span id="total-carrito">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let totalCarrito = 0;
+
+        function agregarAlCarrito(nombreProducto, precio) {
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            const subtotal = precio * cantidad;
+            totalCarrito += subtotal;
+
+            const listaCarrito = document.getElementById("lista-carrito");
+            const item = document.createElement("li");
+            item.textContent = `${nombreProducto} - Cantidad: ${cantidad} - Precio: $${subtotal}`;
+            const eliminarBtn = document.createElement("button");
+            eliminarBtn.textContent = "Eliminar";
+            eliminarBtn.onclick = function() {
+                totalCarrito -= subtotal;
+                document.getElementById("total-carrito").textContent = totalCarrito;
+                listaCarrito.removeChild(item);
+            };
+            item.appendChild(eliminarBtn);
+            listaCarrito.appendChild(item);
+
+            document.getElementById("total-carrito").textContent = totalCarrito;
+        }
+
+        function calculartotal() {
+            const productoseleccionado = document.getElementById("producto").value;
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+
+            const precios = {
+                producto1: 60000,
+                producto2: 55000,
+                producto3: 100000,
+                producto4: 70000,
+                producto5:25000,
+            };
+
+            const precio = precios[productoseleccionado];
+            const subtotal = precio * cantidad;
+            document.getElementById("total").textContent = subtotal;
+        }
+    </script>
+    <footer id="footer">
+        <div class="footer-container">
+            <h4>Todos los derechos reservados a Wolfskin, creado por Asley Ovalle, Sara Ortiz, Leidy Perez, Dylan Jimenez y Joan Rojas</h4>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h2>WhatsApp</h2>
+                    <h3>3332681576</h3>
+                    <a href="https://web.whatsapp.com" target="_blank">
+                        <img src="imagenes/whatsapp-logo-png-0.webp" alt="WhatsApp Logo" class="footer-icon">
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <h2>Facebook</h2>
+                    <h3>Usuario: Joan Rojas</h3>
+                    <a href="https://www.facebook.com/?locale=es_LA" target="_blank">
+                        <img src="imagenes/Facebook-f_Logo-Blue-Logo.wine.webp" alt="Facebook Logo" class="footer-icon">
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <h2>Instagram</h2>
+                    <h3>Usuario: wolfskincsp</h3>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="imagenes/Instagram-Logo.wine.webp" alt="Instagram Logo" class="footer-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
+

@@ -1,0 +1,272 @@
+/* estilos_productos.css */
+
+/* Estilos del contenedor principal */
+#contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos del encabezado */
+#encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black; /* Color de fondo */
+    padding: 10px 20px;
+    color: white;
+}
+
+#logo {
+    width: 80px; /* Ajustar el tamaño del logo */
+}
+
+#titulo {
+    font-size: 24px; /* Tamaño del texto del título */
+    font-weight: bold;
+}
+
+/* Estilos del menú de navegación */
+#menu {
+    background-color: #080c11; /* Color de fondo del menú */
+    padding: 10px 0;
+}
+
+#menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+#menu li {
+    margin: 0 15px; /* Espaciado entre los elementos del menú */
+}
+
+#menu a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500;
+    transition: color 0.3s; /* Transición para el hover */
+}
+
+#menu a:hover {
+    color: #5E17EB ; /* Color al pasar el mouse sobre el enlace */
+}
+
+/* Estilos del contenido principal */
+h1 {
+    text-align: center; /* Centrar el título principal */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+table {
+    width: 100%; /* Ancho de la tabla */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+table td {
+    border: 1px solid #ddd; /* Bordes de las celdas */
+    padding: 15px; /* Espaciado interno de las celdas */
+    text-align: center; /* Centrar el contenido */
+}
+
+table img {
+    max-width: 250px; /* Hacer que la imagen se ajuste al ancho de la celda */
+    height: auto; /* Mantener la relación de aspecto */
+}
+
+/* Estilos del carrito */
+#carrito {
+    margin-top: 30px; /* Espaciado superior */
+    padding: 15px;
+    border: 1px solid black; /* Bordes del carrito */
+    background-color: #f9f9f9; /* Color de fondo del carrito */
+}
+
+#lista-carrito {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+/* Botones */
+button {
+    background-color: black; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin bordes */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo mano */
+    transition: background-color 0.3s; /* Transición para el hover */
+}
+
+button:hover {
+    background-color:#8f15c9 ; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para la sección de historia */
+#contenido-historia {
+    margin: 20px; /* Espacio alrededor de la sección */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+h1 {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Margen inferior */
+}
+/* Estilos para la sección de contacto */
+#contenido-contacto {
+    margin: 20px; /* Espacio alrededor de la sección */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columnas */
+}
+
+label {
+    margin-top: 10px; /* Espacio superior para las etiquetas */
+}
+
+input, textarea {
+    padding: 10px; /* Espaciado interno */
+    margin-top: 5px; /* Espacio superior para los campos de entrada */
+    border: 1px solid #ccc; /* Bordes de los campos de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+button {
+    margin-top: 15px; /* Espacio superior para el botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: black; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+}
+
+button:hover {
+    background-color: black; /* Color al pasar el mouse por encima del botón */
+}
+
+/* Estilos para la sección de inicio de sesión */
+#contenido-login {
+    margin: 20px; /* Espacio alrededor de la sección */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columnas */
+}
+
+label {
+    margin-top: 10px; /* Espacio superior para las etiquetas */
+}
+
+input {
+    padding: 10px; /* Espaciado interno */
+    margin-top: 5px; /* Espacio superior para los campos de entrada */
+    border: 1px solid #ccc; /* Bordes de los campos de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+button {
+    margin-top: 15px; /* Espacio superior para el botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: black; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+}
+
+button:hover {
+    background-color: black; /* Color al pasar el mouse por encima del botón */
+}
+
+/* Estilos para la sección de registro */
+#contenido-registro {
+    margin: 20px; /* Espacio alrededor de la sección */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columnas */
+}
+
+label {
+    margin-top: 10px; /* Espacio superior para las etiquetas */
+}
+
+input {
+    padding: 10px; /* Espaciado interno */
+    margin-top: 5px; /* Espacio superior para los campos de entrada */
+    border: 1px solid #ccc; /* Bordes de los campos de entrada */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+button  a {
+    margin-top: 15px; /* Espacio superior para el botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: black; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+}
+
+button:hover {
+    background-color: black; /* Color al pasar el mouse por encima del botón */
+}
+
+/* Estilos del footer */
+#footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.contact-item h2 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.contact-item h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-icon {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
+
+
+    
+
+

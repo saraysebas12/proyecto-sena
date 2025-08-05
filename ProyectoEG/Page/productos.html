@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marroquinería - Compras Online</title>
+    <link rel="stylesheet" href="style/estilos_productos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <header id="encabezado">
+            <img src="./imagenes/Blue Illustrative Mascot Wolves Esports Team Logo.png" alt="Logo Marroquinería" id="logo">
+            <div id="titulo">WOLF SKIN</div>
+        </header>
+
+        <nav id="menu">
+            <ul id="button">
+                <li><a href="index.html">Sobre nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="contactenos.html">Contáctenos</a></li>
+                <li><a href="paginas/inicio_sesion.html">Inicio de sesión</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <script>
+        let totalCarrito = 0;
+
+        function agregarAlCarrito(nombreProducto, precio) {
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            const subtotal = precio * cantidad;
+            totalCarrito += subtotal;
+
+            const listaCarrito = document.getElementById("lista-carrito");
+            const item = document.createElement("li");
+            item.textContent = `${nombreProducto} - Cantidad: ${cantidad} - Precio: $${subtotal}`;
+            const eliminarBtn = document.createElement("button");
+            eliminarBtn.textContent = "Eliminar";
+            eliminarBtn.onclick = function() {
+                totalCarrito -= subtotal;
+                document.getElementById("total-carrito").textContent = totalCarrito;
+                listaCarrito.removeChild(item);
+            };
+            item.appendChild(eliminarBtn);
+            listaCarrito.appendChild(item);
+
+            document.getElementById("total-carrito").textContent = totalCarrito;
+        }
+
+        function calculartotal() {
+            const productoseleccionado = document.getElementById("producto").value;
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+
+            const precios = {
+                producto1: 60000,
+                producto2: 55000,
+                producto3: 100000,
+                producto4: 70000,
+            };
+
+            const precio = precios[productoseleccionado];
+            const subtotal = precio * cantidad;
+            document.getElementById("total").textContent = subtotal;
+        }
+    </script>
+</body>
+</html>
+
+
+
